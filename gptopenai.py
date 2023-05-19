@@ -7,7 +7,7 @@ import datetime
 #import Pygame # for animated video (Work in progress)
 
 # Set up OpenAI credentials
-openai.api_key = 'API-KEY'
+openai.api_key = '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'
 
 # Set up text-to-speech engine
 engine = pyttsx3.init('sapi5')
@@ -39,10 +39,13 @@ def get_voice_input():
         except:
             print("Sorry, could not understand audio input.")
             return ""
+        #finally: ( till here its working)
+         #   print("try and except succesfully runned")
 
 # Define function to generate OpenAI response
 def generate_openai_response(prompt):
-    response = openai.Completion.create(
+    #try:
+        response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=prompt,
         max_tokens=2049,
@@ -50,12 +53,15 @@ def generate_openai_response(prompt):
         stop=None,
         temperature=0.5,
     )
-    return response.choices[0].text
+        return response.choices[0].text
+    #except: ( it is working)
+     #   print("is it working till here")
+# return ""
 
 # Define function to speak response
 def speak(text):
-        engine.say(text)
-        engine.runAndWait()
+    engine.say(text)
+    engine.runAndWait()
 
     # Main loop
 if __name__=='__main__':
