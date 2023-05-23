@@ -7,7 +7,7 @@ import datetime
 #import Pygame # for animated video (Work in progress)
 
 # Set up OpenAI credentials
-openai.api_key = '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'
+openai.api_key = 'API KEY'
 
 # Set up text-to-speech engine
 engine = pyttsx3.init('sapi5')
